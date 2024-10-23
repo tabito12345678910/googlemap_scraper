@@ -96,6 +96,7 @@ for item in items:
     try:
         addy_driver.get(data['link'])
         data['address'] = addy_driver.find_element(By.CLASS_NAME, "Io6YTe").text
+        data['website'] = addy_driver.find_element(By.CSS_SELECTOR, 'a').get_attribute('href')
         time.sleep(0.01)
     except Exception:
         pass
